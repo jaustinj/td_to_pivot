@@ -10,11 +10,11 @@ def file_choose():
     return filename
 
 def get_filename():
-    file_name = raw_input('What would you like to name your xlsx OUTPUT?')
+    file_name = raw_input('What would you like to name your csv OUTPUT?  ')
     if file_name is '':
         file_name = 'default'
     file_name = str(file_name)
-    file_name = file_name + '.xlsx'
+    file_name = file_name + '.csv'
     return file_name
 
 
@@ -64,7 +64,7 @@ class TrackExport(object):
         
 
     def clean_import(self, csv_filepath):
-        df = pd.read_csv(csv_filepath, header=None)
+        df = pd.read_csv(csv_filepath, header=None, low_memory=False)
         
          #take timestamp, convert to datetime and set as index
         try:

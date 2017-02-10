@@ -16,6 +16,8 @@ track_export = td.TrackExport(td.file_choose())
 
 
 #Begin Writing Excel
-writer = pd.ExcelWriter(file_name, engine='xlsxwriter') 
-track_export.unstacked.to_excel(writer,sheet_name = 'Aggregations', startrow = 0, startcol = 0)
-writer.save()
+#writer = pd.ExcelWriter(file_name, engine='xlsxwriter') 
+#track_export.unstacked.to_excel(writer,sheet_name = 'Aggregations', startrow = 0, startcol = 0)
+#writer.save()
+
+track_export.unstacked.to_csv(file_name)
